@@ -173,10 +173,23 @@
       responseItem.className = 'response-item';
       
       const time = new Date(response.timestamp).toLocaleTimeString();
-      responseItem.innerHTML = `
-        <div class="response-time">${time} • ${response.profile}</div>
-        <div class="response-text">${response.text}</div>
-      `;
+      
+      // Show question if available
+      let content = '';
+      if (response.question) {
+        content = `
+          <div class="response-time">${time} • ${response.profile}</div>
+          <div class="response-text" style="color: #6366f1; font-weight: 600; margin-bottom: 8px;">Q: ${response.question}</div>
+          <div class="response-text">${response.text}</div>
+        `;
+      } else {
+        content = `
+          <div class="response-time">${time} • ${response.profile}</div>
+          <div class="response-text">${response.text}</div>
+        `;
+      }
+      
+      responseItem.innerHTML = content;
 
       container.insertBefore(responseItem, container.firstChild);
 

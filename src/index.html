@@ -45,8 +45,15 @@
         </div>
 
         <div class="form-group">
-          <label for="contextInput">Custom Context (Optional)</label>
-          <textarea id="contextInput" rows="4" placeholder="Add resume, job description, company info, or any context to personalize responses..."></textarea>
+          <label for="contextInput">Custom Context / Resume (Optional)</label>
+          <textarea id="contextInput" rows="4" placeholder="Paste your resume, job description, or any context here..."></textarea>
+          <div style="margin-top: 10px;">
+            <label class="file-upload-btn">
+              📄 Upload Resume (PDF/TXT)
+              <input type="file" id="resumeUpload" accept=".pdf,.txt,.doc,.docx" style="display: none;" />
+            </label>
+            <span id="resumeFileName" style="margin-left: 10px; color: #94a3b8; font-size: 12px;"></span>
+          </div>
         </div>
 
         <div class="actions">
@@ -69,13 +76,27 @@
           </div>
           <div class="status-item">
             <span class="status-label">AI Model:</span>
-            <span id="modelStatus" class="status-value">Gemini 2.0 Flash</span>
+            <span id="modelStatus" class="status-value">Gemini 2.5 Flash</span>
           </div>
           <div class="status-item">
             <span class="status-label">Stealth Mode:</span>
             <span id="stealthStatus" class="status-value">Balanced</span>
           </div>
         </div>
+      </section>
+
+      <!-- Manual Testing Section -->
+      <section id="testingSection" class="section">
+        <h2>🧪 Manual Testing</h2>
+        <p style="color: #94a3b8; margin-bottom: 15px;">Test the AI assistant without screen capture. Type a question and see the response in the overlay.</p>
+        
+        <div class="form-group">
+          <label for="testQuestion">Test Question</label>
+          <textarea id="testQuestion" rows="3" placeholder="Example: What are the key features of React hooks?"></textarea>
+        </div>
+        
+        <button id="sendTestBtn" class="btn btn-primary">Send Test Question</button>
+        <button id="clearHistoryBtn" class="btn btn-secondary">Clear History</button>
       </section>
 
       <!-- History Section -->
