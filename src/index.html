@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self' https://generativelanguage.googleapis.com;">
+  <title>Cheating Daddy Enhanced</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Header -->
+    <header class="header">
+      <div class="logo">
+        <h1>🎯 Cheating Daddy</h1>
+        <span class="version">v1.0 Enhanced</span>
+      </div>
+      <div class="header-actions">
+        <button id="settingsBtn" class="btn btn-secondary">⚙️ Settings</button>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Setup Section -->
+      <section id="setupSection" class="section">
+        <h2>🚀 Get Started</h2>
+        
+        <div class="form-group">
+          <label for="apiKey">Gemini API Key</label>
+          <input type="password" id="apiKey" placeholder="Enter your Google Gemini API key" />
+          <small>Get your free API key from <a href="https://makersuite.google.com/app/apikey" target="_blank">Google AI Studio</a></small>
+        </div>
+
+        <div class="form-group">
+          <label for="profileSelect">AI Profile</label>
+          <select id="profileSelect">
+            <option value="interview">Interview Assistant</option>
+            <option value="sales">Sales Call Coach</option>
+            <option value="meeting">Meeting Copilot</option>
+            <option value="presentation">Presentation Helper</option>
+            <option value="negotiation">Negotiation Aid</option>
+            <option value="exam">Exam Support</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="contextInput">Custom Context (Optional)</label>
+          <textarea id="contextInput" rows="4" placeholder="Add resume, job description, company info, or any context to personalize responses..."></textarea>
+        </div>
+
+        <div class="actions">
+          <button id="startBtn" class="btn btn-primary">Start Overlay</button>
+          <button id="stopBtn" class="btn btn-danger" disabled>Stop Overlay</button>
+        </div>
+      </section>
+
+      <!-- Status Section -->
+      <section id="statusSection" class="section">
+        <h2>📊 Status</h2>
+        <div class="status-grid">
+          <div class="status-item">
+            <span class="status-label">Overlay:</span>
+            <span id="overlayStatus" class="status-value inactive">Inactive</span>
+          </div>
+          <div class="status-item">
+            <span class="status-label">Screen Capture:</span>
+            <span id="captureStatus" class="status-value inactive">Not Capturing</span>
+          </div>
+          <div class="status-item">
+            <span class="status-label">AI Model:</span>
+            <span id="modelStatus" class="status-value">Gemini 2.0 Flash</span>
+          </div>
+          <div class="status-item">
+            <span class="status-label">Stealth Mode:</span>
+            <span id="stealthStatus" class="status-value">Balanced</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- History Section -->
+      <section id="historySection" class="section">
+        <h2>📝 Recent Conversations</h2>
+        <div id="historyList" class="history-list">
+          <p class="empty-state">No conversations yet. Start the overlay to begin!</p>
+        </div>
+      </section>
+    </main>
+
+    <!-- Settings Panel (Hidden by default) -->
+    <div id="settingsPanel" class="settings-panel hidden">
+      <div class="settings-header">
+        <h2>⚙️ Settings</h2>
+        <button id="closeSettings" class="close-btn">✕</button>
+      </div>
+      
+      <div class="settings-content">
+        <div class="form-group">
+          <label for="transparencySlider">Overlay Transparency: <span id="transparencyValue">90%</span></label>
+          <input type="range" id="transparencySlider" min="10" max="100" value="90" />
+        </div>
+
+        <div class="form-group">
+          <label for="fontSizeSlider">Font Size: <span id="fontSizeValue">14px</span></label>
+          <input type="range" id="fontSizeSlider" min="10" max="24" value="14" />
+        </div>
+
+        <div class="form-group">
+          <label for="stealthSelect">Stealth Level</label>
+          <select id="stealthSelect">
+            <option value="visible">Visible (Normal window)</option>
+            <option value="balanced" selected>Balanced (Transparent, clickable)</option>
+            <option value="ultra">Ultra (Invisible, click-through)</option>
+          </select>
+          <small>Ultra mode makes the overlay completely invisible and undetectable</small>
+        </div>
+
+        <div class="form-group">
+          <label for="layoutSelect">Layout</label>
+          <select id="layoutSelect">
+            <option value="normal" selected>Normal (Full UI)</option>
+            <option value="compact">Compact (Minimal UI)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>
+            <input type="checkbox" id="autoScrollCheck" checked />
+            Auto-scroll to latest response
+          </label>
+        </div>
+
+        <div class="form-group">
+          <label>
+            <input type="checkbox" id="soundCheck" />
+            Play sound on new response
+          </label>
+        </div>
+
+        <button id="saveSettings" class="btn btn-primary">Save Settings</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="renderer.js"></script>
+</body>
+</html>
